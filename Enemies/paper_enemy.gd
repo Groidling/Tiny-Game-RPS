@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var speed = 100
+var speed = 200
 
 func move_to_player():
-	print()
-	velocity = self.get_angle_to(self.get_parent().get_node("Rock").global_position) * speed
+	velocity = ($"../Rock".position-self.position).normalized()* speed
 func _physics_process(delta):
 	move_and_slide()
+	move_to_player()
