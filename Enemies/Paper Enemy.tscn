@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dda2xd8oj03f2"]
+[gd_scene load_steps=5 format=3 uid="uid://dda2xd8oj03f2"]
 
 [ext_resource type="Script" uid="uid://bamqqrvfww46y" path="res://Enemies/paper_enemy.gd" id="1_aox6y"]
 [ext_resource type="Texture2D" uid="uid://bjohtlywjetx0" path="res://Enemies/Paper Enemies2.png" id="1_wpwxb"]
+[ext_resource type="PackedScene" uid="uid://bgtmws8fbsr4f" path="res://Common_Components/HitboxComponent.tscn" id="3_kntnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpwxb"]
 size = Vector2(149, 162.5)
@@ -17,3 +18,5 @@ offset = Vector2(73, -7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-81, 58)
 shape = SubResource("RectangleShape2D_wpwxb")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_kntnl")]

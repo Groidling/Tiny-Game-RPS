@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://4ska7tq8a0x4"]
+[gd_scene load_steps=12 format=3 uid="uid://4ska7tq8a0x4"]
 
 [ext_resource type="Script" uid="uid://d02n2esl34cog" path="res://Character/rock.gd" id="1_abyt7"]
 [ext_resource type="Texture2D" uid="uid://ctlougolf1eca" path="res://Character/Rock Legs/Muscle Legs/Left Muscle Leg.png" id="2_gy6y1"]
 [ext_resource type="Texture2D" uid="uid://djkxw2vki5suo" path="res://Character/Rock Legs/Muscle Legs/Right Muscle Leg.png" id="3_n8yrp"]
 [ext_resource type="Texture2D" uid="uid://dei643s18cmv1" path="res://Character/Rock Bodies/Grey Rock Body.png" id="4_gy6y1"]
 [ext_resource type="Texture2D" uid="uid://xq4eb3a8sa2s" path="res://Character/Rock Faces/Rock Face Alt 0.png" id="5_gy6y1"]
+[ext_resource type="PackedScene" uid="uid://cvknbcs0yakf" path="res://Weapons/sciccors.tscn" id="6_n8yrp"]
 
 [sub_resource type="Animation" id="Animation_5fu52"]
 resource_name = "New Walk"
@@ -176,3 +177,7 @@ texture = ExtResource("5_gy6y1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_5fu52")
+
+[node name="Sciccors" parent="." instance=ExtResource("6_n8yrp")]
+position = Vector2(141, 16)
+rotation = 0.784873
