@@ -1,20 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://4ska7tq8a0x4"]
+[gd_scene load_steps=11 format=3 uid="uid://4ska7tq8a0x4"]
 
 [ext_resource type="Script" uid="uid://d02n2esl34cog" path="res://Character/rock.gd" id="1_abyt7"]
-[ext_resource type="Texture2D" uid="uid://p2c6vvbtknct" path="res://Character/Left Leg.png" id="2_5fu52"]
-[ext_resource type="Texture2D" uid="uid://bcbtm5qk8b1ww" path="res://Character/Right Leg.png" id="3_gy6y1"]
-[ext_resource type="Texture2D" uid="uid://ci1syfxhb2dlu" path="res://Character/Alt Rock Faces/Rock Face Alt 1.png" id="4_5fu52"]
+[ext_resource type="Texture2D" uid="uid://ctlougolf1eca" path="res://Character/Rock Legs/Muscle Legs/Left Muscle Leg.png" id="2_gy6y1"]
+[ext_resource type="Texture2D" uid="uid://djkxw2vki5suo" path="res://Character/Rock Legs/Muscle Legs/Right Muscle Leg.png" id="3_n8yrp"]
+[ext_resource type="Texture2D" uid="uid://dei643s18cmv1" path="res://Character/Rock Bodies/Grey Rock Body.png" id="4_gy6y1"]
+[ext_resource type="Texture2D" uid="uid://xq4eb3a8sa2s" path="res://Character/Rock Faces/Rock Face Alt 0.png" id="5_gy6y1"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fu52"]
-radius = 78.0
-height = 156.0
+[sub_resource type="Animation" id="Animation_5fu52"]
+resource_name = "New Walk"
 
 [sub_resource type="Animation" id="Animation_v8vsl"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Right_Leg:position")
+tracks/0/path = NodePath("Right_Leg_sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Left_Leg:position")
+tracks/1/path = NodePath("Left_Leg_sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -34,6 +34,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rock_Body_Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -26)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Face_Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -24)]
 }
 
 [sub_resource type="Animation" id="Animation_n8yrp"]
@@ -43,55 +67,68 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Left_Leg:position")
+tracks/0/path = NodePath("Left_Leg_sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1.28311e-05, 1e-05, 6.10352e-05),
+"times": PackedFloat32Array(0, 0.0997802, 0.2, 0.3),
+"transitions": PackedFloat32Array(0.225, 0.225, 0.225, 0.225),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -17), Vector2(0, -1.05512)]
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, -25)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Right_Leg:position")
+tracks/1/path = NodePath("Right_Leg_sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1.28311e-05, 1e-05, 1e-05),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(0.225, 0.225, 0.225, 0.225),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, -1)]
+"values": [Vector2(0, 0), Vector2(0, -25), Vector2(0, 0), Vector2(0, -10)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/path = NodePath("Rock_Body_Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.1, 0.200045, 0.3),
+"transitions": PackedFloat32Array(0.225314, 0.225, 0.225, 0.225),
 "update": 0,
-"values": []
+"values": [Vector2(0, -26), Vector2(0, -36), Vector2(0, -26), Vector2(0, -36)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Face_Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.200045, 0.3),
+"transitions": PackedFloat32Array(0.225, 0.225, 0.225, 0.225),
+"update": 0,
+"values": [Vector2(0, -24), Vector2(0, -34), Vector2(0, -24), Vector2(0, -34)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y6wf6"]
 _data = {
+&"New Walk": SubResource("Animation_5fu52"),
 &"RESET": SubResource("Animation_v8vsl"),
 &"Walk Animation": SubResource("Animation_n8yrp")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fu52"]
+radius = 78.0
+height = 156.0
+
 [node name="Rock" type="CharacterBody2D"]
 script = ExtResource("1_abyt7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
-shape = SubResource("CapsuleShape2D_5fu52")
-
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.35, 0.35)
 
 [node name="Spawner_E" type="Marker2D" parent="."]
 position = Vector2(1700, 0)
@@ -122,12 +159,20 @@ libraries = {
 &"": SubResource("AnimationLibrary_y6wf6")
 }
 
-[node name="Left_Leg" type="Sprite2D" parent="."]
-texture = ExtResource("2_5fu52")
+[node name="Left_Leg_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_gy6y1")
 
-[node name="Right_Leg" type="Sprite2D" parent="."]
-texture = ExtResource("3_gy6y1")
+[node name="Right_Leg_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_n8yrp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Rock_Body_Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -26)
-texture = ExtResource("4_5fu52")
+texture = ExtResource("4_gy6y1")
+
+[node name="Rock_Face_Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("5_gy6y1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_5fu52")
