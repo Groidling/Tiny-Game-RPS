@@ -4,7 +4,7 @@ extends CharacterBody2D
 var spawn_time = 1
 var Spawn_amount = 1.0
 var input_direction
-var enemy = preload("res://Enemies/Paper Enemy.tscn")
+const enemy = preload("res://Enemies/Paper Enemy.tscn")
 
 func _ready():
 	spawn_behavior()
@@ -37,7 +37,7 @@ func spawn(amount:int,location:Vector2,enemyin):
 
 	for i in amount:
 		var enemytemp = enemyin.instantiate()
-		self.get_parent().add_child(enemytemp)
+		get_parent().add_child(enemytemp)
 		if input_direction == Vector2(0,0):
 			enemytemp.position = get_node(String(spawnkey[Vector2(0,1)])).global_position
 		else:
