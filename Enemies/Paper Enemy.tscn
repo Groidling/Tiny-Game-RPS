@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjohtlywjetx0" path="res://Enemies/Paper Enemies2.png" id="1_wpwxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpwxb"]
-size = Vector2(226, 285)
+size = Vector2(149, 162.5)
 
 [node name="PaperEnemy" type="CharacterBody2D"]
 script = ExtResource("1_aox6y")
@@ -15,5 +15,5 @@ texture = ExtResource("1_wpwxb")
 offset = Vector2(73, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-12, -10)
+position = Vector2(-81, 58)
 shape = SubResource("RectangleShape2D_wpwxb")
