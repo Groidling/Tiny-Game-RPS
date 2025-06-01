@@ -7,3 +7,7 @@ func move_to_player():
 func _physics_process(delta):
 	move_and_slide()
 	move_to_player()
+	if velocity != Vector2(0,0):
+		$AnimationPlayer.play("paper walk animation")
+	else:
+		$AnimationPlayer.stop()

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://4ska7tq8a0x4"]
 
 [ext_resource type="Script" uid="uid://d02n2esl34cog" path="res://Character/rock.gd" id="1_abyt7"]
-[ext_resource type="Texture2D" uid="uid://ctlougolf1eca" path="res://Character/Rock Legs/Muscle Legs/Left Muscle Leg.png" id="2_gy6y1"]
-[ext_resource type="Texture2D" uid="uid://djkxw2vki5suo" path="res://Character/Rock Legs/Muscle Legs/Right Muscle Leg.png" id="3_n8yrp"]
+[ext_resource type="Texture2D" uid="uid://p2c6vvbtknct" path="res://Character/Rock Legs/Basic Rock Legs/Left Leg.png" id="2_5fu52"]
+[ext_resource type="Texture2D" uid="uid://bcbtm5qk8b1ww" path="res://Character/Rock Legs/Basic Rock Legs/Right Leg.png" id="3_gy6y1"]
 [ext_resource type="Texture2D" uid="uid://dei643s18cmv1" path="res://Character/Rock Bodies/Grey Rock Body.png" id="4_gy6y1"]
 [ext_resource type="Texture2D" uid="uid://xq4eb3a8sa2s" path="res://Character/Rock Faces/Rock Face Alt 0.png" id="5_gy6y1"]
 
@@ -120,9 +120,8 @@ _data = {
 &"Walk Animation": SubResource("Animation_n8yrp")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fu52"]
-radius = 78.0
-height = 156.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_gy6y1"]
+radius = 87.0517
 
 [node name="Rock" type="CharacterBody2D"]
 script = ExtResource("1_abyt7")
@@ -160,10 +159,10 @@ libraries = {
 }
 
 [node name="Left_Leg_sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_gy6y1")
+texture = ExtResource("2_5fu52")
 
 [node name="Right_Leg_sprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_n8yrp")
+texture = ExtResource("3_gy6y1")
 
 [node name="Rock_Body_Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -26)
@@ -174,5 +173,5 @@ position = Vector2(0, -24)
 texture = ExtResource("5_gy6y1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
-shape = SubResource("CapsuleShape2D_5fu52")
+position = Vector2(-5, -27)
+shape = SubResource("CircleShape2D_gy6y1")

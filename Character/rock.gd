@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 600
 var spawn_time = 1
 var Spawn_amount = 1.0
 var input_direction
