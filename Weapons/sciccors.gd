@@ -13,3 +13,6 @@ func _on_hitbox_body_entered(area):
 		attack.attack_position = global_position
 		
 		hitbox.damage(attack)
+		
+func _ready():
+	$AnimationPlayer.play("open scissors")
