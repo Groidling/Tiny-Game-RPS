@@ -7,16 +7,14 @@
 [node name="Main" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_83ytx")]
-position = Vector2(19, -8)
 
 [node name="Rock" parent="." instance=ExtResource("2_amygn")]
-position = Vector2(5, 5)
 
 [node name="RigidBody2D" type="StaticBody2D" parent="."]
 position = Vector2(2, 511)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(-50, -16, -71, 2, -78, 21, -67, 31, -32, 36, 6, 39, 31, 36, 59, 31, 70, 24, 72, 10, 64, 1, 45, -3, 29, -9, 22, -19, 14, -31, 11, -39, -2, -42, -20, -39, -33, -41, -40, -38, -45, -32, -48, -25)
-
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("3_amygn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(-50, -16, -71, 2, -78, 21, -67, 31, -32, 36, 6, 39, 31, 36, 59, 31, 70, 24, 72, 10, 64, 1, 45, -3, 29, -9, 22, -19, 14, -31, 11, -39, -2, -42, -20, -39, -33, -41, -40, -38, -45, -32, -48, -25)
