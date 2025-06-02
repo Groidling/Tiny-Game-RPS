@@ -177,5 +177,10 @@ texture = ExtResource("5_gy6y1")
 position = Vector2(-5, -27)
 shape = SubResource("CircleShape2D_gy6y1")
 
-[node name="Sciccors" parent="." instance=ExtResource("6_n8yrp")]
-position = Vector2(-2, -26)
+[node name="scis_pivot" type="Sprite2D" parent="."]
+scale = Vector2(1.31129, 1.31129)
+offset = Vector2(24.4035, -5.33827)
+
+[node name="Sciccors" parent="scis_pivot" instance=ExtResource("6_n8yrp")]
+position = Vector2(164.724, -35.08)
+scale = Vector2(1, 1)
