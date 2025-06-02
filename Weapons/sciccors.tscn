@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://7rm04tsvbt0g"]
+[gd_scene load_steps=10 format=3 uid="uid://vni0rcthj7qx"]
 
-[ext_resource type="Script" path="res://Weapons/sciccors.gd" id="1_7kosu"]
+[ext_resource type="Script" uid="uid://4hoftip240wm" path="res://Weapons/sciccors.gd" id="1_7kosu"]
 [ext_resource type="Texture2D" uid="uid://dl1l5afuh0vrm" path="res://Weapons/Scissors_Right.png" id="2_7kosu"]
 [ext_resource type="Texture2D" uid="uid://d13lvtfjcxu3h" path="res://Weapons/Scissors_Left.png" id="3_737w0"]
+[ext_resource type="PackedScene" uid="uid://bgtmws8fbsr4f" path="res://Common_Components/HitboxComponent.tscn" id="4_737w0"]
 
 [sub_resource type="Animation" id="Animation_w1nwf"]
 length = 0.001
@@ -168,8 +169,11 @@ _data = {
 &"snip": SubResource("Animation_737w0")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1nwf"]
+size = Vector2(168.835, 80.3927)
+
 [node name="Sciccors" type="Node2D"]
-scale = Vector2(4.43228, 4.43228)
+scale = Vector2(1.31129, 1.31129)
 script = ExtResource("1_7kosu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -188,3 +192,11 @@ position = Vector2(-4.06112, -3.8355)
 rotation = -0.202419
 texture = ExtResource("3_737w0")
 offset = Vector2(34.1443, -15.9645)
+
+[node name="HitboxComponent" parent="." instance=ExtResource("4_737w0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(74.4174, -30.1963)
+shape = SubResource("RectangleShape2D_w1nwf")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_body_entered"]
