@@ -185,13 +185,13 @@ libraries = {
 position = Vector2(-3.8355, -4.51235)
 rotation = 0.295527
 texture = ExtResource("2_7kosu")
-offset = Vector2(34.121, -5.74714)
+offset = Vector2(116.491, -68.4278)
 
 [node name="left" type="Sprite2D" parent="."]
 position = Vector2(-4.06112, -3.8355)
 rotation = -0.202419
 texture = ExtResource("3_737w0")
-offset = Vector2(34.1443, -15.9645)
+offset = Vector2(132.895, -34.3038)
 
 [node name="HitboxComponent" parent="." instance=ExtResource("4_737w0")]
 
