@@ -1,4 +1,6 @@
-extends Node2D
+extends Area2D
+class_name Hitbox_component 
+
 
 @export var health_component : HealthComponent
 

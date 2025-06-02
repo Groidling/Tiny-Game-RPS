@@ -1,8 +1,70 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=8 format=3 uid="uid://7rm04tsvbt0g"]
 
 [ext_resource type="Script" path="res://Weapons/sciccors.gd" id="1_7kosu"]
 [ext_resource type="Texture2D" uid="uid://dl1l5afuh0vrm" path="res://Weapons/Scissors_Right.png" id="2_7kosu"]
 [ext_resource type="Texture2D" uid="uid://d13lvtfjcxu3h" path="res://Weapons/Scissors_Left.png" id="3_737w0"]
+=======
+[gd_scene load_steps=9 format=3 uid="uid://cvknbcs0yakf"]
+
+[ext_resource type="Script" uid="uid://4hoftip240wm" path="res://Weapons/sciccors.gd" id="1_7kosu"]
+[ext_resource type="Texture2D" uid="uid://c8c2htqgqvow3" path="res://Weapons/scissor_right.png" id="1_jb7pe"]
+[ext_resource type="Texture2D" uid="uid://cte02y7hlkvt8" path="res://Weapons/scissor_left.png" id="1_wqblm"]
+[ext_resource type="PackedScene" uid="uid://bgtmws8fbsr4f" path="res://Common_Components/HitboxComponent.tscn" id="4_737w0"]
+
+[sub_resource type="Animation" id="Animation_737w0"]
+resource_name = "snip"
+length = 0.29
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("left:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.31),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.202419]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("left:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-4.06112, -3.8355)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("right:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.295527]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-3.8355, -4.51235)]
+}
+>>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_w1nwf"]
 length = 0.001
@@ -168,6 +230,9 @@ _data = {
 &"snip": SubResource("Animation_737w0")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_737w0"]
+size = Vector2(36.4974, 46.6211)
+
 [node name="Sciccors" type="Node2D"]
 scale = Vector2(4.43228, 4.43228)
 script = ExtResource("1_7kosu")
@@ -180,6 +245,7 @@ libraries = {
 [node name="right" type="Sprite2D" parent="."]
 position = Vector2(-3.8355, -4.51235)
 rotation = 0.295527
+<<<<<<< Updated upstream
 scale = Vector2(1, 1)
 texture = ExtResource("2_7kosu")
 offset = Vector2(34.121, -5.74714)
@@ -189,3 +255,18 @@ position = Vector2(-4.06112, -3.8355)
 rotation = -0.202419
 texture = ExtResource("3_737w0")
 offset = Vector2(34.1443, -15.9645)
+=======
+texture = ExtResource("1_jb7pe")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("4_737w0")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(13.9634, -24.9804)
+rotation = -0.0639961
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_737w0")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_body_entered"]
+>>>>>>> Stashed changes
