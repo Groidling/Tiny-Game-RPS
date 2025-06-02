@@ -16,6 +16,8 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+	#makes sciccors revolve around player
+	$scis_pivot.look_at(get_global_mouse_position())
 	if input_direction != Vector2(0,0):
 		$AnimationPlayer.play("Walk Animation")
 	else:
