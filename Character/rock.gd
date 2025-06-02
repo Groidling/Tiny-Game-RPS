@@ -26,7 +26,6 @@ func _physics_process(delta):
 		$Left_Leg_sprite.scale.x = sign(input_direction.x)
 		$Right_Leg_sprite.scale.x = sign(input_direction.x)
 
-
 func spawn(amount:int,location:Vector2,enemyin):
 	var spawnkey = {
 	Vector2(0,1):"Spawner_N",
