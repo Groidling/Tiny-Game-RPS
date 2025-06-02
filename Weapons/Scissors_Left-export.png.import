@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8c2htqgqvow3"
-path="res://.godot/imported/scissor_right.png-ba7155b9982b00c5a714e17de9628885.ctex"
+uid="uid://cjju3j4o3ni35"
+path="res://.godot/imported/Scissors_Left-export.png-3fd64fb7bf1589bce73039ab0bb34dba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weapons/scissor_right.png"
-dest_files=["res://.godot/imported/scissor_right.png-ba7155b9982b00c5a714e17de9628885.ctex"]
+source_file="res://Weapons/Scissors_Left-export.png"
+dest_files=["res://.godot/imported/Scissors_Left-export.png-3fd64fb7bf1589bce73039ab0bb34dba.ctex"]
 
 [params]
 
