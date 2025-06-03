@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var can_move = true
-var speed = 200
+var speed = 500
 
 func move_to_player():
 	velocity = ($"../Rock".position-self.position).normalized()* speed
