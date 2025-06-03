@@ -24,7 +24,6 @@ func apply_damage():
 		if area is HitboxComponent:
 			var attack = Attack.new()
 			attack.attack_damage = attack_damage
-			attack.attack_force = attack_force
 			attack.attack_position = global_position
 			area.damage(attack)
 
