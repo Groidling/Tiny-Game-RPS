@@ -1,12 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw3vwp1jrl7kl"]
+[gd_scene load_steps=6 format=3 uid="uid://dw3vwp1jrl7kl"]
 
 [ext_resource type="PackedScene" uid="uid://bf8nto4tjwnko" path="res://Background/Background.tscn" id="1_83ytx"]
 [ext_resource type="PackedScene" uid="uid://4ska7tq8a0x4" path="res://Character/Rock.tscn" id="2_amygn"]
 [ext_resource type="Texture2D" uid="uid://bo3lx1e427rea" path="res://Objects/Rock Object.png" id="3_amygn"]
+[ext_resource type="Texture2D" uid="uid://6ldqhvywm7q2" path="res://Objects/Tree.png" id="4_ps1la"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6aewd"]
+size = Vector2(131.5, 135.5)
 
 [node name="Main" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_83ytx")]
+
+[node name="RigidBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(2, 511)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+position = Vector2(1057, -1667)
+texture = ExtResource("4_ps1la")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(849, -1482)
+shape = SubResource("RectangleShape2D_6aewd")
 
 [node name="Rock" parent="." instance=ExtResource("2_amygn")]
 

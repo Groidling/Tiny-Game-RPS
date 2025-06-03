@@ -28,7 +28,10 @@ func apply_damage():
 			area.damage(attack)
 
 func _ready():
-	$AnimationPlayer.play("open scissors")
+	playAnimation("open scissors")
+
+func playAnimation(animation:String):
+	$AnimationPlayer.play(animation)
 
 func HitboxIsEnabled(InputBoolean:bool):
 	if InputBoolean == true:
