@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var attack_damage := 10.0
-var attack_force := 100.0
 
 var overlapping_areas := []
 
@@ -11,11 +10,10 @@ func _process(delta):
 
 func _on_hitbox_body_entered(area):
 	if area is HitboxComponent:
-		
 		var hitbox = area
+		
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage
-		attack.attack_force = attack_force
 		attack.attack_position = global_position
 		
 		hitbox.damage(attack)
@@ -32,3 +30,9 @@ func apply_damage():
 
 func _ready():
 	$AnimationPlayer.play("open scissors")
+
+func HitboxIsEnabled(InputBoolean:bool):
+	if InputBoolean == true:
+		$"HitboxComponent/CollisionShape2D".disabled = true
+	else:
+		$"HitboxComponent/CollisionShape2D".disabled = false
