@@ -106,7 +106,7 @@ texture = ExtResource("2_8k8rk")
 offset = Vector2(73, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-78, 62)
+position = Vector2(93, 14)
 scale = Vector2(1.00001, 0.99999)
 shape = SubResource("CircleShape2D_aox6y")
 
@@ -117,6 +117,6 @@ MAX_HEALTH = 20.0
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(-82, 55)
+position = Vector2(98, 12)
 shape = SubResource("RectangleShape2D_a147p")
 debug_color = Color(0.921569, 0.247059, 0.341176, 0.0470588)
