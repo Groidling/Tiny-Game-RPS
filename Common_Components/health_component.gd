@@ -10,7 +10,9 @@ func _ready():
 	
 func damage(attack:Attack):
 	health -= attack.attack_damage
-	$"../Sprite2D".self_modulate()
+	$"../Sprite2D".self_modulate = Color(1,.58,.58,1)
+	await get_tree().create_timer(.08).timeout
+	$"../Sprite2D".self_modulate = Color(1,1,1,1)
 	
 	if health <= 0:
 		get_parent().queue_free()
