@@ -1,8 +1,9 @@
 extends Node2D
 
-var attack_damage := 10.0
+@export var attack_damage := 10.0
 var attack_force := 100.0
 
+#runs every frame
 func _process(delta):
 	look_at(get_global_mouse_position())
 

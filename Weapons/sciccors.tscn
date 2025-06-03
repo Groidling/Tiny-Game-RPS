@@ -175,6 +175,7 @@ size = Vector2(168.835, 80.3927)
 [node name="Sciccors" type="Node2D"]
 scale = Vector2(1.31129, 1.31129)
 script = ExtResource("1_7kosu")
+attack_damage = 5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

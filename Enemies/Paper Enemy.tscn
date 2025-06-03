@@ -91,6 +91,7 @@ scale = Vector2(1.00001, 0.99999)
 shape = SubResource("CircleShape2D_aox6y")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_8k8rk")]
+MAX_HEALTH = 20.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_fo7x0")]
 health_component = NodePath("../HealthComponent")
