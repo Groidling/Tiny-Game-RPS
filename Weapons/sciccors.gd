@@ -3,6 +3,8 @@ extends Node2D
 @export var attack_damage := 10.0
 var attack_force := 100.0
 
+var overlapping_areas := []
+
 #runs every frame
 func _process(delta):
 	look_at(get_global_mouse_position())
@@ -18,5 +20,15 @@ func _on_hitbox_body_entered(area):
 		
 		hitbox.damage(attack)
 		
+
+func apply_damage():
+	for area in overlapping_areas:
+		if area is HitboxComponent:
+			var attack = Attack.new()
+			attack.attack_damage = attack_damage
+			attack.attack_force = attack_force
+			attack.attack_position = global_position
+			area.damage(attack)
+
 func _ready():
 	$AnimationPlayer.play("open scissors")
