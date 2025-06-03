@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://4ska7tq8a0x4"]
+[gd_scene load_steps=16 format=3 uid="uid://4ska7tq8a0x4"]
 
 [ext_resource type="Script" uid="uid://d02n2esl34cog" path="res://Character/rock.gd" id="1_abyt7"]
 [ext_resource type="Texture2D" uid="uid://p2c6vvbtknct" path="res://Character/Rock Legs/Basic Rock Legs/Left Leg.png" id="2_5fu52"]
 [ext_resource type="Texture2D" uid="uid://bcbtm5qk8b1ww" path="res://Character/Rock Legs/Basic Rock Legs/Right Leg.png" id="3_gy6y1"]
-[ext_resource type="Texture2D" uid="uid://dei643s18cmv1" path="res://Character/Rock Bodies/Grey Rock Body.png" id="4_gy6y1"]
-[ext_resource type="Texture2D" uid="uid://xq4eb3a8sa2s" path="res://Character/Rock Faces/Rock Face Alt 0.png" id="5_gy6y1"]
+[ext_resource type="Texture2D" uid="uid://dcn24uprhafhc" path="res://Character/Rock Bodies/Grey Rock Body Facing R.png" id="4_v8vsl"]
+[ext_resource type="Texture2D" uid="uid://5k2y80fg4mbj" path="res://Character/Rock Bodies/Grey Rock Body Facing L.png" id="5_y6wf6"]
 [ext_resource type="PackedScene" uid="uid://vni0rcthj7qx" path="res://Weapons/sciccors.tscn" id="6_n8yrp"]
+[ext_resource type="Texture2D" uid="uid://d7s5veh8ibdj" path="res://Character/Rock Faces/Rock Face Alt 0 R.png" id="6_y6wf6"]
+[ext_resource type="Texture2D" uid="uid://brog21uq4fulp" path="res://Character/Rock Faces/Rock Face Alt 0 L.png" id="7_xlw2t"]
 
 [sub_resource type="Animation" id="Animation_5fu52"]
 resource_name = "New Walk"
@@ -121,6 +123,34 @@ _data = {
 &"Walk Animation": SubResource("Animation_n8yrp")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlw2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_v8vsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y6wf6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcs0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_y6wf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xlw2t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_gy6y1"]
 radius = 87.0517
 
@@ -165,16 +195,18 @@ texture = ExtResource("2_5fu52")
 [node name="Right_Leg_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("3_gy6y1")
 
-[node name="Rock_Body_Sprite" type="Sprite2D" parent="."]
+[node name="Rock_Body_Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -26)
-texture = ExtResource("4_gy6y1")
+sprite_frames = SubResource("SpriteFrames_xlw2t")
+frame_progress = 0.582209
 
-[node name="Rock_Face_Sprite" type="Sprite2D" parent="."]
+[node name="Rock_Face_Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
-texture = ExtResource("5_gy6y1")
+sprite_frames = SubResource("SpriteFrames_wcs0f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, -27)
+scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_gy6y1")
 
 [node name="scis_pivot" type="Sprite2D" parent="."]

@@ -21,13 +21,20 @@ func _physics_process(delta):
 	$scis_pivot.look_at(get_global_mouse_position())
 	if input_direction != Vector2(0,0):
 		$AnimationPlayer.play("Walk Animation")
+		if input_direction.x != 0:
+			$Left_Leg_sprite.scale.x = sign(input_direction.x)
+			$Right_Leg_sprite.scale.x = sign(input_direction.x)
+			if sign(input_direction.x) == -1:
+				$Rock_Body_Sprite.set_frame(1)
+				$Rock_Face_Sprite.set_frame(1)
+			else:
+				$Rock_Body_Sprite.set_frame(0)
+				$Rock_Face_Sprite.set_frame(0)
+		else:
+			$Left_Leg_sprite.scale.x = 1
+			$Right_Leg_sprite.scale.x = 1
 	else:
 		$AnimationPlayer.stop()
-	if input_direction.x != 0:
-		$Rock_Body_Sprite.scale.x = sign(input_direction.x)
-		$Rock_Face_Sprite.scale.x = sign(input_direction.x)
-		$Left_Leg_sprite.scale.x = sign(input_direction.x)
-		$Right_Leg_sprite.scale.x = sign(input_direction.x)
 
 func spawn(amount:int,location:Vector2,enemyin):
 	var spawnkey = {

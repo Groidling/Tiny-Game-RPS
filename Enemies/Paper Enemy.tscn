@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dikppbrsup5yw"]
 
 [ext_resource type="Script" uid="uid://bamqqrvfww46y" path="res://Enemies/paper_enemy.gd" id="1_aox6y"]
-[ext_resource type="Texture2D" uid="uid://bjohtlywjetx0" path="res://Enemies/Paper Enemies2.png" id="1_wpwxb"]
+[ext_resource type="Texture2D" uid="uid://0dycpubxocqh" path="res://Enemies/Paper Enemies6.png" id="2_8k8rk"]
 [ext_resource type="PackedScene" uid="uid://dqtyuxdbx0dx7" path="res://Common_Components/HealthComponent.tscn" id="3_8k8rk"]
 [ext_resource type="PackedScene" uid="uid://bgtmws8fbsr4f" path="res://Common_Components/HitboxComponent.tscn" id="4_fo7x0"]
 
@@ -102,11 +102,11 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wpwxb")
+texture = ExtResource("2_8k8rk")
 offset = Vector2(73, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-77, 60)
+position = Vector2(-78, 62)
 scale = Vector2(1.00001, 0.99999)
 shape = SubResource("CircleShape2D_aox6y")
 

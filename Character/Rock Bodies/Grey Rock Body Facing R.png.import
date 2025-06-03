@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xq4eb3a8sa2s"
-path="res://.godot/imported/Rock Face Alt 0.png-144811d311cc531da6fd2ad253f89d26.ctex"
+uid="uid://dcn24uprhafhc"
+path="res://.godot/imported/Grey Rock Body Facing R.png-938b226dd407e28d6e31520192b7251f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character/Rock Faces/Rock Face Alt 0.png"
-dest_files=["res://.godot/imported/Rock Face Alt 0.png-144811d311cc531da6fd2ad253f89d26.ctex"]
+source_file="res://Character/Rock Bodies/Grey Rock Body Facing R.png"
+dest_files=["res://.godot/imported/Grey Rock Body Facing R.png-938b226dd407e28d6e31520192b7251f.ctex"]
 
 [params]
 
