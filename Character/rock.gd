@@ -23,7 +23,11 @@ func _physics_process(delta):
 		$AnimationPlayer.play("Walk Animation")
 	else:
 		$AnimationPlayer.stop()
-
+	if input_direction.x != 0:
+		$Rock_Body_Sprite.scale.x = sign(input_direction.x)
+		$Rock_Face_Sprite.scale.x = sign(input_direction.x)
+		$Left_Leg_sprite.scale.x = sign(input_direction.x)
+		$Right_Leg_sprite.scale.x = sign(input_direction.x)
 
 func spawn(amount:int,location:Vector2,enemyin):
 	var spawnkey = {
