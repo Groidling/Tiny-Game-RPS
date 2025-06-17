@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dikppbrsup5yw"]
+[gd_scene load_steps=11 format=3 uid="uid://dikppbrsup5yw"]
 
 [ext_resource type="Script" uid="uid://bamqqrvfww46y" path="res://Enemies/paper_enemy.gd" id="1_aox6y"]
 [ext_resource type="Texture2D" uid="uid://0dycpubxocqh" path="res://Enemies/Paper Enemies6.png" id="2_8k8rk"]
-[ext_resource type="PackedScene" uid="uid://dqtyuxdbx0dx7" path="res://Common_Components/HealthComponent.tscn" id="3_8k8rk"]
+[ext_resource type="PackedScene" uid="uid://diu3fbxo4r0w1" path="res://Common_Components/attack_box.tscn" id="3_8k8rk"]
 [ext_resource type="PackedScene" uid="uid://bgtmws8fbsr4f" path="res://Common_Components/HitboxComponent.tscn" id="4_fo7x0"]
 
 [sub_resource type="Animation" id="Animation_kntnl"]
@@ -87,8 +87,12 @@ _data = {
 &"paper walk animation": SubResource("Animation_aox6y")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_aox6y"]
-radius = 89.0496
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ijj0"]
+radius = 97.999
+height = 195.998
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo7x0"]
+size = Vector2(235.156, 60.9347)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a147p"]
 size = Vector2(206, 248)
@@ -105,16 +109,27 @@ libraries = {
 texture = ExtResource("2_8k8rk")
 offset = Vector2(73, -7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(93, 14)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(85, -1)
 scale = Vector2(1.00001, 0.99999)
-shape = SubResource("CircleShape2D_aox6y")
+shape = SubResource("CapsuleShape2D_7ijj0")
 
-[node name="HealthComponent" parent="." instance=ExtResource("3_8k8rk")]
-MAX_HEALTH = 20.0
+[node name="AttackBox" parent="." instance=ExtResource("3_8k8rk")]
+collision_layer = 0
+collision_mask = 1
+enemy = true
 
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_fo7x0")]
-health_component = NodePath("../HealthComponent")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(99.359, -0.292953)
+scale = Vector2(1.0537, 1)
+shape = SubResource("RectangleShape2D_fo7x0")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("4_fo7x0")]
+collision_layer = 8
+collision_mask = 0
+MAX_HEALTH = 2.0
+enemy = true
+sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(98, 12)

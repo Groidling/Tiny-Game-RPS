@@ -38,14 +38,14 @@ func _physics_process(delta):
 
 func spawn(amount:int,location:Vector2,enemyin):
 	var spawnkey = {
-	Vector2(0,1):"Spawner_N",
-	Vector2(1,0):"Spawner_E",
-	Vector2(0,-1):"Spawner_S",
-	Vector2(-1,0):"Spawner_W",
-	Vector2(1,1):"Spawner_NE",
-	Vector2(1,-1):"Spawner_SE",
-	Vector2(-1,-1):"Spawner_SW",
-	Vector2(-1,1):"Spawner_NW",
+	Vector2(0,1):"Spawners/Spawner_N",
+	Vector2(1,0):"Spawners/Spawner_E",
+	Vector2(0,-1):"Spawners/Spawner_S",
+	Vector2(-1,0):"Spawners/Spawner_W",
+	Vector2(1,1):"Spawners/Spawner_NE",
+	Vector2(1,-1):"Spawners/Spawner_SE",
+	Vector2(-1,-1):"Spawners/Spawner_SW",
+	Vector2(-1,1):"Spawners/Spawner_NW",
 	}
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://4ska7tq8a0x4"]
+[gd_scene load_steps=20 format=3 uid="uid://4ska7tq8a0x4"]
 
 [ext_resource type="Script" uid="uid://d02n2esl34cog" path="res://Character/rock.gd" id="1_abyt7"]
 [ext_resource type="Texture2D" uid="uid://p2c6vvbtknct" path="res://Character/Rock Legs/Basic Rock Legs/Left Leg.png" id="2_5fu52"]
@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://d7s5veh8ibdj" path="res://Character/Rock Faces/Rock Face Alt 0 R.png" id="6_y6wf6"]
 [ext_resource type="Texture2D" uid="uid://brog21uq4fulp" path="res://Character/Rock Faces/Rock Face Alt 0 L.png" id="7_xlw2t"]
 [ext_resource type="Texture2D" uid="uid://cwup6bnd5w702" path="res://UI/heart.png" id="9_xlw2t"]
-[ext_resource type="PackedScene" uid="uid://dqtyuxdbx0dx7" path="res://Common_Components/HealthComponent.tscn" id="10_txoh4"]
 [ext_resource type="PackedScene" uid="uid://bgtmws8fbsr4f" path="res://Common_Components/HitboxComponent.tscn" id="11_tpd6u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gy6y1"]
+radius = 87.0517
 
 [sub_resource type="Animation" id="Animation_5fu52"]
 resource_name = "New Walk"
@@ -154,9 +156,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gy6y1"]
-radius = 87.0517
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wcs0f"]
 texture = ExtResource("9_xlw2t")
 
@@ -168,6 +167,11 @@ script = ExtResource("1_abyt7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.35, 0.35)
+
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -27)
+shape = SubResource("CircleShape2D_gy6y1")
+debug_color = Color(0.707059, 0.359497, 0.837719, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -189,19 +193,12 @@ frame_progress = 0.582209
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_wcs0f")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-5, -27)
-shape = SubResource("CircleShape2D_gy6y1")
-debug_color = Color(0.707059, 0.359497, 0.837719, 0.42)
-
-[node name="HealthComponent" parent="." instance=ExtResource("10_txoh4")]
-MAX_HEALTH = 3.0
-
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("11_tpd6u")]
-scale = Vector2(0.680001, 1)
-collision_layer = 2
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("11_tpd6u")]
+scale = Vector2(0.671644, 1.02488)
 collision_mask = 2
-health_component = NodePath("../HealthComponent")
+MAX_HEALTH = 3.0
+sprite = NodePath("../Rock_Body_Sprite")
+is_player = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(-5, -27)
@@ -242,26 +239,28 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Spawner_E" type="Marker2D" parent="."]
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Spawner_E" type="Marker2D" parent="Spawners"]
 position = Vector2(1700, 0)
 
-[node name="Spawner_N" type="Marker2D" parent="."]
+[node name="Spawner_N" type="Marker2D" parent="Spawners"]
 position = Vector2(0, -1200)
 
-[node name="Spawner_S" type="Marker2D" parent="."]
+[node name="Spawner_S" type="Marker2D" parent="Spawners"]
 position = Vector2(0, 1200)
 
-[node name="Spawner_W" type="Marker2D" parent="."]
+[node name="Spawner_W" type="Marker2D" parent="Spawners"]
 position = Vector2(-1684, 0)
 
-[node name="Spawner_NE" type="Marker2D" parent="."]
+[node name="Spawner_NE" type="Marker2D" parent="Spawners"]
 position = Vector2(1696, -1234)
 
-[node name="Spawner_SE" type="Marker2D" parent="."]
+[node name="Spawner_SE" type="Marker2D" parent="Spawners"]
 position = Vector2(1677, 1249)
 
-[node name="Spawner_NW" type="Marker2D" parent="."]
+[node name="Spawner_NW" type="Marker2D" parent="Spawners"]
 position = Vector2(-1684, -1200)
 
-[node name="Spawner_SW" type="Marker2D" parent="."]
+[node name="Spawner_SW" type="Marker2D" parent="Spawners"]
 position = Vector2(-1646, 1090)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://diu3fbxo4r0w1"]
+
+[ext_resource type="Script" uid="uid://d2ltytp1qfacq" path="res://Common_Components/attack_component.gd" id="1_87bg2"]
+
+[node name="AttackBox" type="Area2D"]
+modulate = Color(0.959303, 0.29595, 0.615926, 1)
+self_modulate = Color(0.886036, 0.823144, 0.983464, 1)
+scale = Vector2(0.815226, 3.41349)
+collision_layer = 2
+collision_mask = 0
+priority = 1
+script = ExtResource("1_87bg2")
+
+[connection signal="area_entered" from="." to="." method="_on_attack_entered"]

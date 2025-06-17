@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4hoftip240wm" path="res://Weapons/sciccors.gd" id="1_7kosu"]
 [ext_resource type="Texture2D" uid="uid://dl1l5afuh0vrm" path="res://Weapons/Scissors_Right.png" id="2_7kosu"]
 [ext_resource type="Texture2D" uid="uid://d13lvtfjcxu3h" path="res://Weapons/Scissors_Left.png" id="3_737w0"]
-[ext_resource type="PackedScene" uid="uid://bgtmws8fbsr4f" path="res://Common_Components/HitboxComponent.tscn" id="4_737w0"]
+[ext_resource type="PackedScene" uid="uid://diu3fbxo4r0w1" path="res://Common_Components/attack_box.tscn" id="4_737w0"]
 
 [sub_resource type="Animation" id="Animation_v3fne"]
 resource_name = "Close Scissors"
@@ -63,18 +63,24 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [false],
-"method": &"HitboxIsEnabled"
-}, {
-"args": [true],
-"method": &"HitboxIsEnabled"
-}, {
 "args": ["open scissors"],
 "method": &"playAnimation"
 }]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_w1nwf"]
@@ -127,10 +133,22 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.295527]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_3wa0s"]
 resource_name = "open scissors"
-length = 0.1
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -138,7 +156,7 @@ tracks/0/path = NodePath("right:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.349066, -0.872665]
@@ -150,7 +168,7 @@ tracks/1/path = NodePath("right:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(9.25032, -1.35371), Vector2(9.25032, -1.35371)]
@@ -162,7 +180,7 @@ tracks/2/path = NodePath("left:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.261799, 0.174533]
@@ -174,7 +192,7 @@ tracks/3/path = NodePath("left:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 0)]
@@ -186,7 +204,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [false],
@@ -258,8 +276,8 @@ _data = {
 &"snip": SubResource("Animation_737w0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1nwf"]
-size = Vector2(168.835, 80.3927)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_737w0"]
+size = Vector2(160.802, 59.5979)
 
 [node name="Sciccors" type="Node2D"]
 scale = Vector2(1.31129, 1.31129)
@@ -283,10 +301,12 @@ rotation = -0.202419
 texture = ExtResource("3_737w0")
 offset = Vector2(32.574, -18.8628)
 
-[node name="HitboxComponent" parent="." instance=ExtResource("4_737w0")]
+[node name="AttackBox" parent="." instance=ExtResource("4_737w0")]
+collision_layer = 0
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(74.4174, -30.1963)
-shape = SubResource("RectangleShape2D_w1nwf")
-
-[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(87.9328, -7.81935)
+rotation = -0.0617359
+scale = Vector2(1.26345, 0.337376)
+shape = SubResource("RectangleShape2D_737w0")
