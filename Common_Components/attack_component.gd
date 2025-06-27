@@ -5,7 +5,6 @@ extends Area2D
 
 
 func _on_attack_entered(area):
-	print("entered")
 	if area is HitboxComponent:
 		var attack = Attack.new()
 		attack.attack_damage = attack_damage

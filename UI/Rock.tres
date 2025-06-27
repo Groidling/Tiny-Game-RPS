@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://1nn1wpydv5ct"]
+
+[ext_resource type="Texture2D" uid="uid://cwup6bnd5w702" path="res://UI/heart.png" id="1_pxir1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wcs0f"]
+texture = ExtResource("1_pxir1")
+modulate_color = Color(0.986, 0.84, 0.761, 1)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_wcs0f")
