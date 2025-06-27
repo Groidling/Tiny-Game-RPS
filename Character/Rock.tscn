@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://4ska7tq8a0x4"]
+[gd_scene load_steps=19 format=3 uid="uid://4ska7tq8a0x4"]
 
 [ext_resource type="Script" uid="uid://d02n2esl34cog" path="res://Character/rock.gd" id="1_abyt7"]
 [ext_resource type="Texture2D" uid="uid://p2c6vvbtknct" path="res://Character/Rock Legs/Basic Rock Legs/Left Leg.png" id="2_5fu52"]
 [ext_resource type="Theme" uid="uid://1nn1wpydv5ct" path="res://UI/Rock.tres" id="2_wcs0f"]
 [ext_resource type="Texture2D" uid="uid://bcbtm5qk8b1ww" path="res://Character/Rock Legs/Basic Rock Legs/Right Leg.png" id="3_gy6y1"]
+[ext_resource type="Texture2D" uid="uid://cwup6bnd5w702" path="res://UI/heart.png" id="3_txoh4"]
 [ext_resource type="Texture2D" uid="uid://dcn24uprhafhc" path="res://Character/Rock Bodies/Grey Rock Body Facing R.png" id="4_v8vsl"]
 [ext_resource type="Texture2D" uid="uid://5k2y80fg4mbj" path="res://Character/Rock Bodies/Grey Rock Body Facing L.png" id="5_y6wf6"]
 [ext_resource type="PackedScene" uid="uid://vni0rcthj7qx" path="res://Weapons/sciccors.tscn" id="6_n8yrp"]
@@ -162,48 +163,103 @@ script = ExtResource("1_abyt7")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.35, 0.35)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D"]
-offset_left = -1644.0
-offset_top = 732.0
-offset_right = -828.0
-offset_bottom = 922.0
-scale = Vector2(2.01367, 1.0194)
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme = ExtResource("2_wcs0f")
-theme_override_constants/separation = 50
-
 [node name="GridContainer" type="GridContainer" parent="Camera2D"]
 layout_direction = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1635.0
+offset_top = 451.0
+offset_right = -1624.0
+offset_bottom = 461.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(131.969, 47.0902)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_wcs0f")
+theme_override_constants/h_separation = 1
+columns = 4
 
 [node name="Panel2" type="Panel" parent="Camera2D/GridContainer"]
+custom_minimum_size = Vector2(2, 10)
 layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_wcs0f")
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
-[node name="Panel4" type="Panel" parent="Camera2D/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_wcs0f")
+[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_txoh4")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="Panel3" type="Panel" parent="Camera2D/GridContainer"]
+custom_minimum_size = Vector2(2, 2)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Panel" type="Panel" parent="Camera2D/GridContainer"]
+[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/Panel3"]
+custom_minimum_size = Vector2(2, 5)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 0.000704844
+offset_top = -41.8442
+offset_right = 0.000704765
+offset_bottom = 42.1558
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_txoh4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel4" type="Panel" parent="Camera2D/GridContainer"]
+custom_minimum_size = Vector2(2, 2)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_wcs0f")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -42.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_txoh4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel5" type="Panel" parent="Camera2D/GridContainer"]
+custom_minimum_size = Vector2(2, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/Panel5"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -42.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_txoh4")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="collider" type="CollisionShape2D" parent="."]
 position = Vector2(-5, -27)
